@@ -1,0 +1,42 @@
+*{
+    font-family: "Roboto";
+    font-optical-sizing: inherit;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+
+    padding: 5px 5px 5px 5px;
+    margin: 5px;
+}
+.header{
+    color:blue; 
+    background:lightblue;
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #98D2C0;
+    color: #205781;
+    width: fit-content;
+}
+tr:nth-child(odd){
+    background-color: #F6F8D5;
+}
+nav a{
+    text-decoration: none;
+    color: #205781; 
+    margin-right: 15px;
+}
+
+form *{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+#main {
+    background-color: #F6F8D5;
+}
+
+#view {
+    background-color: #98D2C0;
+}
