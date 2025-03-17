@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../static/script.js" defer> </script>
+    <script src="../static/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../static/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +14,7 @@
     <meta name="description" content="Your name professional website">
     <title>Document</title>
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="view">David Chung</h1>
         <nav><a href="../index.html">Home</a> </nav>
@@ -23,36 +22,41 @@
         <nav><a href="contact.html">Contact Me</a> </nav>
         <nav><a href="fun.html">For Fun</a> </nav>
     </header>
-<div class="main" >
-    <h2>Contact me</h2>
-    <form>
-        <label for="name">Your name (required)</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Your email</label><br>
-        <input type="text" id="email" name="email"><br>
-        <label for="comment">Your comment</label><br>
-        <input type="text" id="comment" name="comment" style="width: 300px; height: 200px;"><br>
-        <input type="submit" value="Send">
-      </form>
-    <table>
-        <tr>
-          <th>Contact Method</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>dvjr2018@gmail.com</td>
-        </tr>
-        <tr>
-            <td>Phone</td>
-            <td>+1(213)-322-5501</td>
-        </tr>
-        <tr>
-          <td>Linkedin</td>
-          <td><a href="https://www.linkedin.com/in/david-chung-00b04a199/" target="_blank">Linkedin Link </a></td>
-        </tr>
-    </table>
+    <div class="main">
+        <h2>Contact me</h2>
+        <form onsubmit="return validateForm(event)">
+            <label for="name">Your name (required)</label><br>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="email">Your email (required)</label><br>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="comment">Your message (required)</label><br>
+            <textarea id="comment" name="comment" style="width: 300px; height: 200px;" required></textarea><br>
+            
+            <input type="submit" value="Send">
+        </form>
+        <table>
+            <tr>
+              <th>Contact Method</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>dvjr2018@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>+1(213)-322-5501</td>
+            </tr>
+            <tr>
+              <td>LinkedIn</td>
+              <td><a href="https://www.linkedin.com/in/david-chung-00b04a199/" target="_blank">LinkedIn Link</a></td>
+            </tr>
+        </table>
     </div>
-<footer>© 2025 by David Chung</footer>
+    <footer>
+      <p><span id="copyYear"></span> by David Chung</p>
+    </footer>
 </body>
 </html>

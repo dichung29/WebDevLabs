@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./static/script.js" defer> </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="./static/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="static/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
     <meta name="description" content="Your name professional website">
     <title>Document</title>
 </head>
-<body>
+<body onload="addYear()">
 <header>
     <h1 id="main">David Chung</h1>
     <nav><a href="index.html">Home</a> </nav>
@@ -23,21 +24,24 @@
     <nav><a href="views/contact.html">Contact Me</a> </nav>
     <nav><a href="views/fun.html">For Fun</a> </nav>
 </header>
-<div class="main" >
+<div class="main">
     <h2 id="greeting">Hi, my name is David</h2>
     <img src="static/pfp.png" alt="profile pic" width="300" height="400">
-    <p id="intro">My name is David Chung, and I am a first-year student studying Information Systems with plans
-        to add an additional major in Artificial Intelligence. I grew up in South Korea until the age of 3,
-        where I moved from Southern California to Hawaii then Beijing, before settling in Southern
-        California. I enjoy a combination of both business leadership as well as computer science,
-        which is why I plan to pursue both Information Systems and Artificial Intelligence. My career
-        goal after graduation is to develop my technical skills in computer science as a SWE engineer,
-        then moving on to project management for tech companies. On the side, I hope to also work
-        with nonprofit organizations that aim to further access to education. Growing up in multiple
-        different environments, I have first-handedly seen the need for more accessible education.
-        Outside of my professional life, I spend most of my free time learning new songs and jamming
-        with friends. I also love skiing, and over this past season have started getting into park skiing.</p>
-    </div>
-    <footer>© 2025 by David Chung</footer>
-</body>
-</html>
+    <div id="bioToggle">
+        <p id="shortBio">
+            My name is David Chung, and I am a first-year student studying Information Systems with plans
+            to add an additional major in Artificial Intelligence. 
+            <a href="#" id="readMore">Read More</a>
+        </p>
+        <p id="fullBio" style="display: none;">
+            My name is David Chung, and I am a first-year student studying Information Systems with plans
+            to add an additional major in Artificial Intelligence. I grew up in South Korea until the age of 3,
+            where I moved from Southern California to Hawaii then Beijing, before settling in Southern
+            California. I enjoy a combination of both business leadership as well as computer science,
+            which is why I plan to pursue both Information Systems and Artificial Intelligence. My career
+            goal after graduation is to develop my technical skills in computer science as a SWE engineer,
+            then moving on to project management for tech companies. Outside of my professional life, I spend most of my free time learning new songs and jamming with friends.
+            I also love skiing, and over this past season have started getting into park skiing.
+            <a href="#" id="readLess">Read Less</a>
+        </p>
+    

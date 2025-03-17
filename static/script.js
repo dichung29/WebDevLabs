@@ -66,3 +66,76 @@ findTheBanana(L2);
 
 
 
+function addYear() {
+    var currentYear = new Date().getFullYear();
+    var yearElement = document.getElementById("copyYear");
+    
+    if (yearElement) {
+        yearElement.innerHTML = "Made by David © " + currentYear;
+    } else {
+        console.error("Element with id 'copyYear' not found.");
+    }
+}
+
+function showList() {
+    var button = document.getElementById("showButton");
+    var list = document.getElementById("funList");
+    if (list) {
+        list.style.display = "block";
+    } else {
+        console.error("Element with id 'funList' not found.");
+    }
+    if (button) {
+        button.style.display = "none";
+    } else {
+        console.error("Element with id 'showButton' not found.");
+    }
+}
+
+// jQuery for "Read More / Read Less" toggle
+$(document).ready(function() {
+    $("#readMore").click(function(e) {
+        e.preventDefault(); 
+        $("#shortBio").hide();
+        $("#fullBio").show();  
+    });
+    
+    $("#readLess").click(function(e) {
+        e.preventDefault();
+        $("#fullBio").hide();
+        $("#shortBio").show();
+    });
+});
+
+function validateForm(event) {
+    // prevent form from submitting immediately
+    event.preventDefault();
+
+    var nameField = document.getElementById("name");
+    var emailField = document.getElementById("email");
+    var commentField = document.getElementById("comment");
+    
+    if (!nameField.checkValidity()) {
+        alert("Please fill out your name.");
+        nameField.focus();
+        return false;
+    }
+    
+    if (!emailField.checkValidity()) {
+        alert("Please enter a valid email address.");
+        emailField.focus();
+        return false;
+    }
+    
+    if (!commentField.checkValidity()) {
+        alert("Please fill out your message.");
+        commentField.focus();
+        return false;
+    }
+    alert("Form submitted successfully!");
+    
+    // uncomment the next line to submit the form after validation:
+    // event.target.submit();
+    
+    return true;
+}
