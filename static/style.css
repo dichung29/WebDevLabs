@@ -12,6 +12,56 @@
     color:blue; 
     background:lightblue;
 }
+.funIMG {
+    border-radius: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.mainLayout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items horizontally */
+    align-items: flex-start; /* Align items at the top; change to center if needed */
+    gap: 20px;              /* Adds space between items */
+    padding: 20px;
+  }
+
+  .mainLayout > div {
+    flex: 1 1 300px; /* Grow and shrink as needed, with a base width of 300px */
+    margin: 10px;
+  }
+  
+  .item1, .item2, .item3, .item4 {
+    background-color: #F6F8D5; /* Optional: adds a background color */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+.container {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .button-advice {
+    background-color: #205781;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .button-advice:hover {
+    background-color: #163f5e;
+  }
+  
 th{
     padding-top: 12px;
     padding-bottom: 12px;
@@ -40,9 +90,22 @@ form *{
 #view {
     background-color: #98D2C0;
 }
+/*
 #funList {
     display: none;
 }
+*/
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .item1, .item2 {
+    flex: 1 1 300px;
+    margin: 10px;
+  }  
 
 #showButton {
     padding: 10px 20px;

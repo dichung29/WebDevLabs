@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../static/script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Your name">
-    <meta name="keywords" content="Carnegie Mellon University, Information Systems">
-    <meta name="description" content="Your name professional website">
-    <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../static/script.js" defer></script>
+  <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8">
+  <title>For Fun</title>
 </head>
 <body onload="addYear()">
-<header>
+  <header>
     <h1 id="view">David Chung</h1>
     <nav><a href="../index.html">Home</a></nav>
     <nav><a href="cv.html">CV</a></nav>
     <nav><a href="contact.html">Contact Me</a></nav>
     <nav><a href="fun.html">For Fun</a></nav>
-</header>
-<div class="main">
-    <h2>Things I like to do for fun</h2>
-    <button id="showButton" onclick="showList()">Click to see...</button>
-    <ul id="funList">
+  </header>
+  
+  <div class="mainLayout">
+    <div class="item1">
+      <h2>Things I like to do for fun</h2>
+      <ul>
         <li>Ski</li>
         <li>Play Music</li>
         <li>Surf</li>
         <li>Take Pictures</li>
-    </ul>
-</div>
-<footer>
+      </ul>
+    </div>
+    
+    <div class="item2">
+      <img src="../static/akpsi.png" alt="Fun Image" class="funIMG">
+    </div>
+    
+    <div class="item3">
+      <h2>Check out this video!</h2>
+      <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/BSydGyxx-QM?start=235" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+    
+    <div class="item4">
+      <div class="container">
+        <h2>Need Some Advice?</h2>
+        <p id="adviceText">Click the button to get a random piece of advice!</p>
+        <button onclick="getAdvice()">Get Advice</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
     <p id="copyYear"></p>
-</footer>
+  </footer>
 </body>
 </html>

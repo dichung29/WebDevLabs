@@ -58,11 +58,13 @@ function greetingFunc() {
     }
 }
 
-greetingFunc();
+if (document.getElementById("greeting")) {
+    greetingFunc();
+}
 
 
-findTheBanana(L1);
-findTheBanana(L2);
+//findTheBanana(L1);
+//findTheBanana(L2);
 
 
 
@@ -73,11 +75,12 @@ function addYear() {
     if (yearElement) {
         yearElement.innerHTML = "Made by David © " + currentYear;
     } else {
-        console.error("Element with id 'copyYear' not found.");
+        //console.error("Element with id 'copyYear' not found.");
     }
 }
 
 function showList() {
+    /*
     var button = document.getElementById("showButton");
     var list = document.getElementById("funList");
     if (list) {
@@ -90,6 +93,7 @@ function showList() {
     } else {
         console.error("Element with id 'showButton' not found.");
     }
+    */
 }
 
 // jQuery for "Read More / Read Less" toggle
@@ -139,3 +143,15 @@ function validateForm(event) {
     
     return true;
 }
+function getAdvice() {
+    fetch("https://api.adviceslip.com/advice")
+      .then(response => response.json())
+      .then(data => {
+        // Update the advice text with the advice from the API
+        document.getElementById("adviceText").innerText = data.slip.advice;
+      })
+      .catch(error => {
+        document.getElementById("adviceText").innerText = "Error fetching advice. Please try again later.";
+        console.error("Error fetching advice:", error);
+      });
+  }
