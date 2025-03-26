@@ -31,7 +31,7 @@ var L2 = ["Apple", "Banana", "Kiwi", "Orange"];
 function findTheBanana(fruitArray) {
     fruitArray.forEach(function(item) {
         if (item === "Banana") {
-            alert("Found Banana in array: " + fruitArray);
+            //alert("Found Banana in array: " + fruitArray);
         }
     });
 }
@@ -62,9 +62,6 @@ if (document.getElementById("greeting")) {
     greetingFunc();
 }
 
-
-//findTheBanana(L1);
-//findTheBanana(L2);
 
 
 
@@ -155,3 +152,46 @@ function getAdvice() {
         console.error("Error fetching advice:", error);
       });
   }
+
+// Toggle the navigation menu on small screens
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+      navLinks.classList.toggle('active');
+    }
+  }
+  
+  // Existing functions from Lab 5 (e.g., addYear)
+  function addYear() {
+    const currentYear = new Date().getFullYear();
+    const yearElement = document.getElementById("copyYear");
+    if (yearElement) {
+      yearElement.innerHTML = "Made by David © " + currentYear;
+    }
+  }
+  
+  
+// Function to highlight the active navigation link
+function setActiveNav() {
+    // Select all nav links that use the "nav-links" class
+    const navLinks = document.querySelectorAll('nav a.nav-links');
+    // Get the current page file name (if empty, assume index.html)
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || "index.html";
+    
+    navLinks.forEach(link => {
+      // Get the file name from the link's href attribute
+      const href = link.getAttribute('href');
+      const linkPage = href.substring(href.lastIndexOf('/') + 1);
+      
+      // If the link's file name matches the current page, add the "active" class
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  }
+  
+  // Run the setActiveNav function once the DOM content is loaded
+  window.addEventListener("DOMContentLoaded", setActiveNav);
+  
+  

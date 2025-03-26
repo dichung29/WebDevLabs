@@ -8,8 +8,45 @@
     padding: 5px 5px 5px 5px;
     margin: 5px;
 }
+
+/* Style for active navigation links */
+.nav-links.active {
+  font-weight: bold;
+  border-bottom: 2px solid #205781;
+  color: red; /* You can change this to your preferred active color */
+}
+
+/* Optional: Change link color on hover */
+.nav-links:hover {
+  color: darkblue;
+}
+/* Define the glow animation using keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: #205781;
+  }
+  50% {
+    transform: scale(1.2);
+    color: #F2EFE7;
+  }
+  100% {
+    transform: scale(1);
+    color: #205781;
+  }
+}
+
+/* Apply the pulse animation to the header element with id="main" */
+#main {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+#view {
+  animation: pulse 3s infinite ease-in-out;
+}
+
 .header{
-    color:blue; 
+    color: #006A71; 
     background:lightblue;
 }
 .funIMG {
@@ -32,7 +69,7 @@
   }
   
   .item1, .item2, .item3, .item4 {
-    background-color: #F6F8D5; /* Optional: adds a background color */
+    background-color: #9ACBD0; /* Optional: adds a background color */
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -65,16 +102,16 @@
 th{
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: #98D2C0;
+    background-color: #F2EFE7;
     color: #205781;
     width: fit-content;
 }
 tr:nth-child(odd){
-    background-color: #F6F8D5;
+    background-color: #F2EFE7;
 }
 nav a{
     text-decoration: none;
-    color: #205781; 
+    color: white; 
     margin-right: 15px;
 }
 
@@ -112,3 +149,210 @@ form *{
     font-size: 1rem;
     cursor: pointer;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    padding: 5px;
+    margin: 5px;
+}
+
+  #webname {
+    background-color: #92ad70;
+    color: white;
+    padding: 10px;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #2a2a2a; 
+  margin-right: 15px;
+}
+
+th {
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  width: fit-content;
+}
+
+tr:nth-child(even) {
+  background-color: #daebc5;
+}
+
+form * {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+button {
+  background-color: #92ad70;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+#readMore, #readLess {
+  color: blue;
+  cursor: pointer;
+}
+
+#readMore:hover, #readLess:hover {
+  color: darkblue;
+}
+
+.funIMG {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.container {
+  border-radius: 10%;
+  display: inline-block;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+}
+
+.container button {
+  margin-top: 10px;
+}
+
+.mainLayout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.item1, .item2, .item3, .item4 {
+  flex: 1 1 300px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'header header'
+  'nav nav'
+  'main_img main'
+  'bottom_content bottom_content'
+  'footer footer';
+
+}
+
+header{
+  grid-area: header;
+  background-color: #F2EFE7;
+}
+
+nav{
+  grid-area: nav;
+  background-color: #006A71;
+}
+
+/* figure {
+  grid-area: figure;
+  background-color: lightpink;
+  height: 30vh;
+  
+} */
+main_img {
+  grid-area: main_img;
+  background-color: rgb(200, 254, 250);
+  height: 30vh;
+}
+
+main {
+  grid-area: main;
+  background-color: orchid;
+  height: 30vh;
+}
+
+summary{
+  grid-area: bottom-content;
+  background-color: lightblue;
+
+}
+
+bottom_content{
+  grid-area: bottom_content;
+  background-color: lightblue;
+}
+
+footer{
+  grid-area: footer;
+  background-color: rgb(222, 196, 247);
+
+}
+
+/* @media only screen and(max-width: 650px){
+  .grid-container {
+    grid-template-areas: 
+  'header '
+  'nav '
+  'figure '
+  'main '
+  'bottom-content '
+  'footer ';
+  }
+} */
+
+@media only screen and (max-width:650px) {
+  .grid-container {
+  display: grid;
+  grid-template-areas:
+  'header'
+  'nav'
+  'main_img'
+  'main'
+  'bottom_content'
+  'footer';
+  }
+}
+
+.active {
+  color: green;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .topnav li a {
+  display: none;
+  }
+  .topnav li a.firstLink {
+  display: block;
+  }
+  .topnav li a.icon {
+  float: right;
+  display: block;
+  color: blue;
+  }
+}
+@media screen and (max-width: 650px) {
+  .topnav.responsive {
+  position: relative;
+  }
+  .topnav.responsive a.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  }
+  .topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+  }
+}  
+
